@@ -50,6 +50,7 @@ ns_query =  """SELECT "FiscalYearPeriod" AS "Date","MarketArea","BusinessArea","
           GROUP BY "FiscalYearPeriod","MarketArea","BusinessArea","Commodity","CustomerUnit", "CustomerUnitName","FIREAccount" """
 
 df_out = pd.read_sql_query(ns_query, con)
+df_out.to_csv("ml2025CU.csv",index=False)
 
 print(df_out.shape)
 
